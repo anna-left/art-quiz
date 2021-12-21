@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>art-quiz</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- main start -->
+      <section class="main active">
+        <div class="main__header">
+          <div class="logo">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+          </div>
+        </div>
+        <div class="main__pictures">
+          <div class="main__pict main__artists__quiz">
+            <!-- <img class="main__img" src="./assets/img/artists-quiz.jpg" width="415px" height="415px" alt="artists-quiz" /> -->
+            <img
+              class="main__img"
+              srcset="
+                ./assets/img/artists-quiz_s.jpg 500w,
+                ./assets/img/artists-quiz.jpg   415w
+              "
+              sizes="(max-width: 1024px) 500px,
+                                         415px"
+              src="./assets/img/artists-quiz.jpg"
+              alt="artists-quiz"
+            />
+            <div class="main__pict-title">
+              <span class="title-bold">Художники</span>
+            </div>
+          </div>
+          <div class="main__pict main__pictures__quiz">
+            <!-- <img class="main__img" src="./assets/img/pictures-quiz.jpg" width="415px" height="415px" -->
+            <img
+              class="main__img"
+              srcset="
+                ./assets/img/pictures-quiz_s.jpg 500w,
+                ./assets/img/pictures-quiz.jpg   415w
+              "
+              sizes="(max-width: 1024px) 500px,
+          415px"
+              src="./assets/img/pictures-quiz.jpg"
+              alt="artists-quiz"
+            />
+            <div class="main__pict-title">
+              <span class="title-bold">Картины</span>
+            </div>
+          </div>
+        </div>
+        <div class="main__footer">
+          <div class="footer__conteiner">
+            <a href="https://rs.school/js/" target="blank"
+              ><img
+                src="https://rs.school/images/rs_school_js.svg"
+                width="100"
+                alt="logo"
+            /></a>
+          </div>
+          <div class="footer__conteiner" style="margin: auto">
+            <div class="main__settings__btn btn__pict btn">
+              <img src="./assets/svg/settings.svg" alt="pict" />
+              <p class="buttons-title">Настройки</p>
+            </div>
+          </div>
+          <div
+            class="footer__conteiner"
+            style="margin-right: 0; margin-left: auto"
+          >
+            <a href="https://github.com/anna-left" target="blank"
+              ><img src="./assets/svg/github.svg" width="41" alt="logo"
+            /></a>
+          </div>
+        </div>
+      </section>
+      <!-- main end -->
+
+      <!-- settings start -->
+      <section class="settings no__active">
+        <div class="settings__header">
+          <div class="logo">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+          </div>
+        </div>
+        <div class="settings__pictures">
+          <div class="settings__pict">
+            <img
+              class="play-sound"
+              src="./assets/svg/volume-on.svg"
+              alt="volume"
+            />
+            <input
+              class="progress"
+              type="range"
+              name="play-progress"
+              value="0.1"
+              min="0"
+              max="1"
+              step="0.1"
+            />
+            <div class="categories__title title-bold">Громкость</div>
+          </div>
+          <div class="settings__pict">
+            <img class="play-sound" src="./assets/svg/timer.png" alt="volume" />
+            <div class="counter">
+              <button class="counter__button" type="button" id="countSDown">
+                –
+              </button>
+              <p class="duration"></p>
+              <button class="counter__button" type="button" id="countSUp">
+                +
+              </button>
+            </div>
+            <input type="checkbox" class="timer__checkbox" id="checkbox" />
+
+            <label class="timer__checkbox-title" for="checkbox"
+              >Игра на время</label
+            >
+          </div>
+        </div>
+        <div class="settings__footer">
+          <div class="settings__btn-save btn">сохранить</div>
+          <div class="settings__btn-cancel btn">отменить</div>
+        </div>
+      </section>
+      <!-- settings end -->
+
+      <!-- categories start -->
+      <section class="categories no__active">
+        <div class="categories__header">
+          <div class="logo categories__logo">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+          </div>
+          <div class="logo__title">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+            <div class="categories__title-logo">категории</div>
+          </div>
+          <div class="categories__buttons">
+            <div class="categories__home__btn btn__pict btn">
+              <img src="./assets/svg/home.svg" alt="pict" />
+              <p class="buttons-title">на главную</p>
+            </div>
+            <div class="categories__title">категории</div>
+            <div class="categories__score__btn btn__pict btn">
+              <img src="./assets/svg/star.svg" alt="pict" />
+              <p class="buttons-title">результат</p>
+            </div>
+          </div>
+        </div>
+        <div class="categories__pictures">
+          <div class="categories__pict">
+            <div class="categories__pict-title">
+              <div class="categories__pict-number"></div>
+              <div class="categories__pict-score"></div>
+            </div>
+            <div class="categories__pict-cat"></div>
+            <img class="categories__img" width="100%" alt="picture" />
+          </div>
+        </div>
+      </section>
+      <!-- categories end -->
+
+      <!-- question__art start -->
+      <section class="question__art no__active">
+        <div class="question__art-header">
+          <div class="score__question__art-btns btn question__categories__btn">
+            категории
+          </div>
+          <div>
+            <img
+              src="./assets/svg/logo.png"
+              width="94"
+              height="60"
+              alt="logo"
+            />
+          </div>
+          <div class="timer">
+            <div class="timer-sec"></div>
+            <img src="./assets/svg/timer.png" alt="time" />
+          </div>
+        </div>
+        <div class="question__art-container">
+          <div class="question__art-picture">
+            <img class="question__art-img" alt="picture0" />
+          </div>
+        </div>
+        <div class="question__art-title title title-bold">
+          Кто автор этой картины ?
+        </div>
+        <div class="question__art-footer">
+          <div class="question__art-answers"></div>
+        </div>
+      </section>
+      <!-- question__art end -->
+
+      <!-- result start -->
+      <section class="result no__active">
+        <div class="result__header">
+          <div class="logo result__logo">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+          </div>
+          <div class="logo__title">
+            <img
+              src="./assets/svg/logo.png"
+              width="220"
+              height="140"
+              alt="logo"
+            />
+            <div class="result__title-logo">категории</div>
+          </div>
+          <div class="result__buttons">
+            <div class="result__home__btn btn__pict btn">
+              <img src="./assets/svg/home.svg" alt="pict" />
+              <p class="buttons-title">на главную</p>
+            </div>
+            <div class="result__title">Результаты</div>
+            <div class="result__cat__btn btn__pict btn">
+              <img src="./assets/svg/star.svg" alt="pict" />
+              <p class="buttons-title">категории</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide result__carousel"
+          data-interval="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" />
+              <div class="result__pictures">
+                <div class="result__pict">
+                  <div class="result__pict-title">
+                    <img class="result__pict-score" alt="score" />
+                  </div>
+                  <div class="result__pict-cat"></div>
+                  <img class="result__img" width="100%" alt="picture" />
+                  <div class="result__pict-description">
+                    <div class="result__pict-name"></div>
+                    <div class="result__pict-author"></div>
+                    <div class="result__pict-year"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="result__footer">
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="carousel-indicator active"
+              ></li>
+            </ol>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- result end -->
+    </div>
+
+    <div id="overlay" class="overlay overlay__no"></div>
+
+    <div class="progressor no__active">
+      <div class="loader"></div>
+    </div>
+
+    <!-- score__question__art start -->
+    <div class="score__question__art no__active">
+      <div class="score__question__art-header">
+        <img
+          class="score__question__art-score"
+          src="./assets/svg/green_score.png"
+          alt="score"
+        />
+      </div>
+      <div class="score__question__art-pict">
+        <img class="score__question__art-img" width="70%" alt="picture0" />
+      </div>
+      <div class="score__question__art-name"></div>
+      <div class="score__question__art-author"></div>
+      <div class="score__question__art-year"></div>
+
+      <div class="score__question__art-footer">
+        <div class="score__question__art-btns btn categories__btn">
+          категории
+        </div>
+
+        <div class="score__question__art-btns btn next__btn">следующий</div>
+      </div>
+    </div>
+    <!-- score__question__art end -->
+
+    <!-- сongratulations start -->
+    <div class="сongratulations no__active">
+      <p class="title сongratulations__message"></p>
+      <p class="сongratulations__title title">8/10</p>
+      <div class="сongratulations__img">
+        <img src="./assets/img/good_job.jpg" alt="" />
+      </div>
+      <div class="сongratulations__btn score__question__art-btns btn">
+        Продолжить
+      </div>
+    </div>
+    <!-- сongratulations end -->
+
+    <script src="./js/global_functions.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/images.js"></script>
+    <script src="./js/initial_values.js"></script>
+    <script src="./js/main_start.js"></script>
+    <script src="./js/quiz_artists_start.js"></script>
+    <script src="./js/quiz_pictures_start.js"></script>
+    <script src="./js/categories_page.js"></script>
+    <script src="./js/question_artist.js"></script>
+    <script src="./js/modal_blocks.js"></script>
+    <script src="./js/result.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
